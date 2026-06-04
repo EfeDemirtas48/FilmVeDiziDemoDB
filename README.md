@@ -90,12 +90,6 @@ Uygulama çalıştıktan sonra terminalde görüntülenen yerel adresi (genellik
 
 ---
 
-## 📸 Ekran Görüntüsü
-
-Projenin ekran görüntülerini veya GIF tanıtımını buraya ekleyebilirsiniz.
-
----
-
 ## 📄 Lisans
 
 Bu proje eğitim ve kişisel kullanım amacıyla geliştirilmiştir.
