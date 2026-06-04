@@ -1,63 +1,103 @@
-Markdown
-# 🍿 Başucu Filmlerim (Movie Tracking App)
+# 🍿 Başucu Filmlerim
 
-Bu proje, izlediğiniz veya izlemek istediğiniz film ve dizileri takip edebileceğiniz, modern ve duyarlı (responsive) bir web uygulamasıdır.
+İzlediğiniz veya izleme listenize eklemek istediğiniz film ve dizileri kolayca takip edebileceğiniz, modern tasarıma sahip bir web uygulaması.
+
+Firebase Firestore'un gerçek zamanlı veri senkronizasyonu sayesinde eklediğiniz içerikler anında güncellenir ve tüm değişiklikler sayfayı yenilemeye gerek kalmadan görüntülenir.
 
 ## ✨ Özellikler
-- **Film Ekleme:** Film adı, türü ve çıkış tarihi ile veritabanına yeni kayıt oluşturma.
-- **İzlendi İşaretleme:** Filmleri tek tıkla "İzlendi" olarak işaretleme (kart tasarımının transparanlaşıp geriye düşmesi).
-- **Silme İşlemi:** Listeden istenmeyen filmleri kalıcı olarak kaldırma.
-- **Canlı Veritabanı:** Firebase Firestore sayesinde sayfayı yenilemeye gerek kalmadan anlık (real-time) veri senkronizasyonu.
-- **Tam Mobil Uyumluluk:** Bootstrap grid sistemi ile telefonda, tablette ve bilgisayarda kusursuz görünüm.
 
-## 🛠️ Kullanılan Teknolojiler
-- **Frontend:** React (Vite)
-- **Veritabanı:** Firebase (Cloud Firestore)
-- **Stil & Tasarım:** Bootstrap 5
+🎬 **Film ve Dizi Ekleme**
+
+* Film adı, türü ve çıkış tarihi bilgileriyle yeni içerikler ekleyebilirsiniz.
+
+✅ **İzlendi Durumu**
+
+* Tek tıkla içerikleri "İzlendi" olarak işaretleyebilirsiniz.
+* İzlenen içerikler görsel olarak arka plana alınarak listede daha düzenli bir görünüm sağlar.
+
+🗑️ **Silme İşlemi**
+
+* İstemediğiniz içerikleri kalıcı olarak kaldırabilirsiniz.
+
+⚡ **Gerçek Zamanlı Senkronizasyon**
+
+* Firebase Firestore sayesinde tüm değişiklikler anlık olarak veritabanına yansır.
+
+📱 **Responsive Tasarım**
+
+* Mobil, tablet ve masaüstü cihazlarda sorunsuz çalışan kullanıcı dostu arayüz.
 
 ---
 
-## 🚀 Kurulum ve Çalıştırma
+## 🛠️ Kullanılan Teknolojiler
 
-Projeyi kendi yerel ortamınızda (bilgisayarınızda) çalıştırmak için aşağıdaki adımları sırasıyla izleyin.
+| Teknoloji          | Açıklama                                     |
+| ------------------ | -------------------------------------------- |
+| React (Vite)       | Modern ve hızlı kullanıcı arayüzü geliştirme |
+| Firebase Firestore | Bulut tabanlı gerçek zamanlı veritabanı      |
+| Bootstrap 5        | Responsive ve modern tasarım altyapısı       |
 
-> **⚠️ ÖNEMLİ NOT:** Projenin boyutunu optimize etmek amacıyla `node_modules` klasörü (gerekli paketler) bu depoya dahil edilmemiştir. Projeyi çalıştırabilmek için indirdikten hemen sonra **`npm install`** komutunu çalıştırarak paketleri yüklemeniz gerekmektedir.
+---
 
-### 1. Projeyi İndirin
-Projeyi bilgisayarınıza klonlayın ve klasörün içine girin:
+## 🚀 Kurulum
+
+Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları takip edin.
+
+### 1. Depoyu Klonlayın
+
 ```bash
-git clone [https://github.com/KULLANICI_ADIN/REPO_ADIN.git](https://github.com/KULLANICI_ADIN/REPO_ADIN.git)
+git clone https://github.com/KULLANICI_ADIN/REPO_ADIN.git
 cd REPO_ADIN
-2. Gerekli Paketleri Yükleyin
-Uygulamanın çalışması için gereken React, Firebase ve Bootstrap kütüphanelerini indirmek için bu komutu çalıştırın:
+```
 
-Bash
+### 2. Gerekli Paketleri Yükleyin
+
+```bash
 npm install
-3. Firebase Bağlantısını Yapılandırın (DİKKAT)
-Uygulamanın veritabanı ile haberleşebilmesi için src/ klasörü içinde bir firebase.js dosyası oluşturun. Kendi Firebase projenizden aldığınız Config bilgilerini aşağıdaki şablona uygun şekilde doldurmanız gerekmektedir:
+```
 
-JavaScript
+> Not: Projede `node_modules` klasörü depoya dahil edilmemiştir. Bu nedenle projeyi indirdikten sonra ilk olarak `npm install` komutunu çalıştırmanız gerekir.
+
+### 3. Firebase Yapılandırması
+
+`src` klasörü içerisinde `firebase.js` dosyası oluşturun ve kendi Firebase projenize ait yapılandırma bilgilerini ekleyin:
+
+```javascript
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// Firebase yapılandırma bilgilerin (kendi bilgilerini buraya gir)
 const firebaseConfig = {
-  apiKey: "KENDİ API ANAHTARINI BURAYA GİR",
-  authDomain: "KENDİ AUTH DOMAIN'İNİ BURAYA GİR",
-  projectId: "KENDİ PROJE ID'İNİ BURAYA GİR",
-  storageBucket: "KENDİ STORAGE BUCKET'İNİ BURAYA GİR",
-  messagingSenderId: "KENDİ MESSAGING SENDER ID'İNİ BURAYA GİR",
-  appId: "KENDİ APP ID'İNİ BURAYA GİR",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
 };
 
-// Firebase'i BAŞLAT (Sadece bir kere)
 const app = initializeApp(firebaseConfig);
 
-// db'yi DIŞA AKTAR
 export const db = getFirestore(app);
-4. Geliştirme Sunucusunu Başlatın
-Tüm ayarlar tamamlandıktan sonra projeyi ayağa kaldırmak için:
+```
 
-Bash
+### 4. Uygulamayı Başlatın
+
+```bash
 npm run dev
-Terminalde beliren yerel adrese (genellikle http://localhost:5173) tıklayarak uygulamanızı tarayıcıda görüntüleyebilirsiniz. İyi seyirler! 🎬
+```
+
+Uygulama çalıştıktan sonra terminalde görüntülenen yerel adresi (genellikle `http://localhost:5173`) tarayıcınızda açarak projeyi kullanmaya başlayabilirsiniz.
+
+---
+
+## 📸 Ekran Görüntüsü
+
+Projenin ekran görüntülerini veya GIF tanıtımını buraya ekleyebilirsiniz.
+
+---
+
+## 📄 Lisans
+
+Bu proje eğitim ve kişisel kullanım amacıyla geliştirilmiştir.
+
+Keyifli seyirler! 🍿🎬
